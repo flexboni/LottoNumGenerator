@@ -14,5 +14,9 @@ class MainActivity : AppCompatActivity() {
         cvConstellation.setOnClickListener{
             startActivity(Intent(this@MainActivity, ConstellationActivity::class.java))
         }
+
+        cvName.setOnClickListener{
+            startActivity(Intent(this@MainActivity, NameActivity::class.java))
+        }
     }
 }

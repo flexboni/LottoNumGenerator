@@ -6,4 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".NameActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glActName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/ivActName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_name"
+        app:layout_constraintBottom_toBottomOf="@+id/glActName2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glActName1" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glActName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <EditText
+        android:id="@+id/etActName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="이름을 입력하세요."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glActName2"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glActName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/btnActNameBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="뒤로가기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glActName3"
+        app:layout_constraintStart_toStartOf="@id/etActName"
+        app:layout_constraintTop_toBottomOf="@+id/etActName"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/btnActNameGenerateNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="생성하기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/etActName"
+        app:layout_constraintStart_toEndOf="@+id/glActName3"
+        app:layout_constraintTop_toBottomOf="@+id/etActName"
+        app:layout_constraintVertical_bias="0.1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
