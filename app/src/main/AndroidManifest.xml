@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".NameActivity" />
-        <activity android:name=".ConstellationActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +17,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ResultActivity"
+            android:theme="@style/AppTheme.Result" />
+        <activity
+            android:name=".NameActivity"
+            android:theme="@style/AppTheme.Name" />
+        <activity
+            android:name=".ConstellationActivity"
+            android:theme="@style/AppTheme.Constellation" />
+
     </application>
 
 </manifest>
