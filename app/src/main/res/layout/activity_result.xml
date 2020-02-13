@@ -40,18 +40,77 @@
         class="androidx.appcompat.widget.AppCompatTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:textSize="60sp"
-        android:text="홍길동님의\n로또번호입니다."
-        android:gravity="center"
-        android:maxLines="3"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:autoSizeMaxTextSize="60sp"
         android:autoSizeMinTextSize="16sp"
         android:autoSizeStepGranularity="1sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:maxLines="3"
+        android:text="홍길동님의\n로또번호입니다."
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/glActRslt1"
         app:layout_constraintEnd_toEndOf="@+id/glActRslt4"
         app:layout_constraintStart_toStartOf="@+id/glActRslt3"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum1"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toTopOf="@+id/glActRslt2"
+        app:layout_constraintEnd_toStartOf="@+id/actvActRsltNum2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/glActRslt3"
+        app:layout_constraintTop_toBottomOf="@+id/glActRslt1" />
+
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum2"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toBottomOf="@+id/actvActRsltNum1"
+        app:layout_constraintEnd_toStartOf="@+id/actvActRsltNum3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actvActRsltNum1"
+        app:layout_constraintTop_toTopOf="@+id/actvActRsltNum1" />
+
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum3"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toBottomOf="@+id/actvActRsltNum2"
+        app:layout_constraintEnd_toStartOf="@+id/actvActRsltNum4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actvActRsltNum2"
+        app:layout_constraintTop_toTopOf="@+id/actvActRsltNum2" />
+
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum4"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toBottomOf="@+id/actvActRsltNum3"
+        app:layout_constraintEnd_toStartOf="@+id/actvActRsltNum5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actvActRsltNum3"
+        app:layout_constraintTop_toTopOf="@+id/actvActRsltNum3" />
+
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum5"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toBottomOf="@id/actvActRsltNum4"
+        app:layout_constraintEnd_toStartOf="@+id/actvActRsltNum6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actvActRsltNum4"
+        app:layout_constraintTop_toTopOf="@+id/actvActRsltNum4" />
+
+    <view
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:id="@+id/actvActRsltNum6"
+        style="@style/ResultNumLottoNumImage"
+        app:layout_constraintBottom_toBottomOf="@+id/actvActRsltNum5"
+        app:layout_constraintEnd_toEndOf="@+id/glActRslt4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actvActRsltNum5"
+        app:layout_constraintTop_toTopOf="@+id/actvActRsltNum5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
