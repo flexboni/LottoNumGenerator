@@ -15,7 +15,7 @@ class ResultActivity : AppCompatActivity() {
         // 전달받은 결과 배열을 가져온다.
         val result = intent.getIntegerArrayListExtra("result")
 
-        // 전달받은 결과가 있느 ㄴ경우에만 실행
+        // 전달받은 결과가 있는 경우에만 실행
         result?.let {
             // 결과에 맞게 로또 공 이미지를 업데이트 한다.
             // 전달받은 결과는 정렬되어 있지 않으므로 정렬해서 전달한다.
@@ -41,4 +41,5 @@ class ResultActivity : AppCompatActivity() {
         actvActRsltNum5.text = result[i++].toString()
         actvActRsltNum6.text = result[i].toString()
     }
+
 }

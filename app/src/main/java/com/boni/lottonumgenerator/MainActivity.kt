@@ -15,9 +15,12 @@ class MainActivity : AppCompatActivity() {
         randomCard.setOnClickListener {
             val intent = Intent(this, ResultActivity::class.java)
 
-            // intent 의 결과 데이터를 전달한다.
-            // int 의 리스트를 전달하므로 'putIntegerArrayListExtra' 를 사용한다.
-            intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumders()))
+//            // intent 의 결과 데이터를 전달한다.
+//            // int 의 리스트를 전달하므로 'putIntegerArrayListExtra' 를 사용한다.
+//            intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumders()))
+
+            // Shuffle 로 섞은 숫자 집합을 전달 한다.
+            intent.putIntegerArrayListExtra("result", ArrayList(getShuffleLottoNumbers()))
 
             startActivity(intent)
         }
@@ -62,5 +65,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         return lottoNumbers
+    }
+
+    /**
+     * Shuffle 을 사용해 로또 번호 생성
+     * (Shuffle 은 '랜덤 집합'이라고 한다. 이미 존재하는 집합을 섞는 것이다.
+     * 예를 들어 1~4 까지의 번호를 갖는 집합에서 마구 섞은 후 앞에서 순서대로 6개의 번호를 자르는 식이다.
+     */
+    fun getShuffleLottoNumbers(): MutableList<Int> {
+        // 1~45 번에 로또 번호를 저장할 리스트 생성
+        val list = mutableListOf<Int>()
+
+        // 1~45 까지 for 문을 돌면서 리스트에 로또 번호 저정
+        for (number in 1..45) {
+            list.add(number)
+        }
+
+        // 리스트를 무작위로 섞는다
+        list.shuffle()
+
+        // 리스트를 앞에서 부터 순서대로 6개를 짤라 결과 반환
+        return list.subList(0, 6)
     }
 }
