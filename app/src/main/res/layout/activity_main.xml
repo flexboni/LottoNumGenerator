@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvLotto"
+        android:id="@+id/randomCard"
         style="@style/MainCardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout style="@style/MainCardViewConst">
@@ -47,7 +47,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvConstellation"
+        android:id="@+id/constellationCard"
         style="@style/MainCardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout style="@style/MainCardViewConst">
@@ -85,7 +85,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvName"
+        android:id="@+id/nameCard"
         style="@style/MainCardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout style="@style/MainCardViewConst">

@@ -70,7 +70,17 @@
     <style name="MainCardViewImage">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:contentDescription">right from By Freepik in https://www.flaticon.com/kr</item>
+        <item name="android:contentDescription">right from By Freepik in
+            https://www.flaticon.com/kr
+        </item>
+    </style>
+
+    <style name="ResultNumLottoNumImage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:src">@drawable/ic_one</item>
     </style>
 
 </resources>
