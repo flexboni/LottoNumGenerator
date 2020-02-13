@@ -43,12 +43,23 @@ class MainActivity : AppCompatActivity() {
     // 랜덤으로 추출하여 6개의 로또 번호를 만드는 함수
     fun getRandomLottoNumders(): MutableList<Int> {
         // 무작위로 생성된 로또 번호를 저장할 가변 리스트 생성
-        val lottoNumbers =  mutableListOf<Int>()
+        val lottoNumbers = mutableListOf<Int>()
 
         // 6번 반복하는 for 문
-        for (i in 1..6)
-        // 리스트에 무작위로 생성된 번호를 추가한다.
-            lottoNumbers.add(getRandomLottoNumber())
+        for (i in 1..6) {
+            // 랜덤한 번호를 임시로 저장할 변수를 생성
+            var number: Int
+
+            do {
+                // 랜덤한 번호를 추출해 number 변수에 저장
+                number = getRandomLottoNumber()
+
+                // lottoNumbers 에 number 변수의 값이 없을 때까지 반복
+            } while (lottoNumbers.contains(number))
+
+            // 리스트에 무작위로 생성된 번호를 추가한다.
+            lottoNumbers.add(number)
+        }
 
         return lottoNumbers
     }
