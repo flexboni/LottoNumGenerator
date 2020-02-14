@@ -2,7 +2,10 @@ package com.boni.lottonumgenerator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import kotlinx.android.synthetic.main.activity_result.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     // 로또 1번 공 이미지의 ID 를 사용
@@ -14,6 +17,19 @@ class ResultActivity : AppCompatActivity() {
 
         // 전달받은 결과 배열을 가져온다.
         val result = intent.getIntegerArrayListExtra("result")
+        // 전달받은 이름을 가져온다.
+        val name = intent.getStringExtra("name")
+
+        resultLabel.text = "랜덤으로 생성된\n로또번호입니다"
+
+        // name 이 전달된 경우 결과화면의 테스트를 변경
+        if (TextUtils.isEmpty(name))
+            finish()
+
+        else
+            resultLabel.text = "${name} 님의" +
+                    "\n${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}" +
+                    "\n로또 번호입니다."
 
         // 전달받은 결과가 있는 경우에만 실행
         result?.let {
