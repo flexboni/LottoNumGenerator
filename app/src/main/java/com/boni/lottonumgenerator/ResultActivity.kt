@@ -8,9 +8,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ResultActivity : AppCompatActivity() {
-    // 로또 1번 공 이미지의 ID 를 사용
-    val lottoImageStartId = R.drawable.ball_01
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
@@ -19,15 +16,21 @@ class ResultActivity : AppCompatActivity() {
         val result = intent.getIntegerArrayListExtra("result")
         // 전달받은 이름을 가져온다.
         val name = intent.getStringExtra("name")
+        // 전달받은 별자리를 가져온다.
+        val constellation  = intent.getStringExtra("constellation")
 
+        // 결과화면 기본 텍스트
         resultLabel.text = "랜덤으로 생성된\n로또번호입니다"
 
-        // name 이 전달된 경우 결과화면의 테스트를 변경
-        if (TextUtils.isEmpty(name))
-            finish()
+        // 이름이 전달된 경우 결과화면의 테스트를 변경
+        if (!TextUtils.isEmpty(name))
+            resultLabel.text = "${name}님의" +
+                    "\n${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}" +
+                    "\n로또 번호입니다."
 
-        else
-            resultLabel.text = "${name} 님의" +
+        // 별자리기 전달된 경우 결과화면의 테스트를 변경
+        if (!TextUtils.isEmpty(constellation))
+            resultLabel.text = "${constellation}의" +
                     "\n${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}" +
                     "\n로또 번호입니다."
 

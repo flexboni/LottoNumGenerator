@@ -7,6 +7,7 @@ import android.widget.CalendarView
 import android.widget.DatePicker
 import kotlinx.android.synthetic.main.activity_constellation.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ConstellationActivity : AppCompatActivity() {
 
@@ -15,7 +16,19 @@ class ConstellationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_constellation)
 
         btnGenerator.setOnClickListener {
-            startActivity(Intent(this@ConstellationActivity, ResultActivity::class.java))
+            val intent = Intent(this@ConstellationActivity, ResultActivity::class.java)
+
+            // intent 의 결과 데이터를 전달한다
+            // int 의 리스트를 전달하므로 putIntegerArrayListExtra 를 사용한다
+            // 전달하는 리스트는 별자리의 해시코드로 생성한 로또 번호
+            intent.putIntegerArrayListExtra("result",
+                ArrayList(LottoNumberMaker.getLottoNumbersFromHash(
+                    makeConstellationString(dpConstellation.month, dpConstellation.dayOfMonth))))
+
+            // 별자리를 추가로 전달한다
+            intent.putExtra("constellation", makeConstellationString(dpConstellation.month, dpConstellation.dayOfMonth))
+
+            startActivity(intent)
         }
 
         // 현재 DatePicker 의 월, 일 정보로 별자리 텍스트 변경
